@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DiscoverPage from '@/views/DiscoverPage.vue'
+import DiscoverTweets from '@/views/DiscoverTweets.vue'
 import FeedPage from '@/views/FeedPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
 import SignupPage from '@/views/SignupPage.vue'
+import MyTweets from "@/views/MyTweets.vue"
+import DiscoverUsers from "@/views/DiscoverUsers.vue"
+import OtherUser from "@/views/OtherUser.vue"
 
 Vue.use(VueRouter)
 
@@ -30,9 +33,24 @@ const routes = [
     component: FeedPage
   },
   {
-    path: '/discover',
-    name: 'Discover',
-    component: DiscoverPage
+    path: '/discovertweets',
+    name: 'DiscoverTweets',
+    component: DiscoverTweets
+  },
+  {
+    path: '/discoverusers',
+    name: 'DiscoverUsers',
+    component: DiscoverUsers
+  },
+  {
+    path: '/mytweets',
+    name: 'MyTweets',
+    component: MyTweets
+  },
+  {
+    path: '/otheruser',
+    name: 'OtherUser',
+    component: OtherUser
   }
 ]
 
