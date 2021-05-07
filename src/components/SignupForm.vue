@@ -55,26 +55,6 @@
       />
       <br />
       <br />
-      <label for="signupimageUrl">ImageUrl: </label>
-      <input
-        type="text"
-        name="signupimageUrl"
-        id="signupimageUrl"
-        placeholder="Your profile image Url"
-        v-model="imageUrl"
-      />
-      <br />
-      <br />
-      <label for="signupbannerUrl">BannerUrl: </label>
-      <input
-        type="text"
-        name="signupbannerUrl"
-        id="signupbannerUrl"
-        placeholder="Your profile banner Url"
-        v-model="bannerUrl"
-      />
-      <br />
-      <br />
       <input
         type="submit"
         value="Signup"
@@ -99,8 +79,6 @@ export default {
       password: undefined,
       bio: undefined,
       birthdate: undefined,
-      imageUrl: undefined,
-      bannerUrl: undefined,
       status: undefined,
     };
   },
@@ -117,8 +95,6 @@ export default {
             password: this.password,
             bio: this.bio,
             birthdate: this.birthdate,
-            imageUrl: this.imageUrl,
-            bannerUrl: this.bannerUrl,
           },
           headers: {
             "Content-Type": "application/json",

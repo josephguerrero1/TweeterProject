@@ -23,6 +23,13 @@
       <br />
       <br />
       <input type="submit" value="Login" id="loginBtn" @click="userLogin()" />
+      <br />
+      <br />
+      <button>
+        <router-link id="signup_btn_loginpage" to="/signup"
+          >Sign Up</router-link
+        >
+      </button>
     </form>
     <h3>{{ status }}</h3>
   </div>
@@ -39,6 +46,7 @@ export default {
       email: undefined,
       password: undefined,
       status: undefined,
+      loginToken: cookies.get("loginToken"),
     };
   },
   methods: {
@@ -74,4 +82,8 @@ export default {
 </script>
 
 <style scoped>
+#signup_btn_loginpage {
+  color: black;
+  text-decoration: none;
+}
 </style>
