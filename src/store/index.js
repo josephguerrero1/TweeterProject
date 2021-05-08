@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userId: Math.floor(Math.random() * 900) + 1
   },
   mutations: {
   },

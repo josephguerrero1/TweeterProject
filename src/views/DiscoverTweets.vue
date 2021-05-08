@@ -9,6 +9,14 @@
       <p>Username: {{ usernamess }}</p>
       <p>Content: {{ contentsss }}</p>
       <p>Date Created: {{ createdAtss }}</p>
+      <br />
+      <tweet-comments></tweet-comments>
+      <br />
+      <add-comment></add-comment>
+      <br />
+      <update-comment></update-comment>
+      <br />
+      <delete-comment></delete-comment>
     </div>
     <hr />
   </div>
@@ -18,10 +26,19 @@
 import axios from "axios";
 import cookies from "vue-cookies";
 import NavPage from "@/components/NavPage.vue";
+import TweetComments from "@/components/TweetComments.vue";
+import AddComment from "@/components/AddComment.vue";
+import UpdateComment from "@/components/UpdateComment.vue";
+import DeleteComment from "@/components/DeleteComment.vue";
+
 export default {
   name: "discover-page",
   components: {
     NavPage,
+    TweetComments,
+    AddComment,
+    UpdateComment,
+    DeleteComment,
   },
   mounted() {
     axios

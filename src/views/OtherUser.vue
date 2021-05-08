@@ -2,10 +2,11 @@
   <div>
     <nav-page></nav-page>
     <h1>Profile Information</h1>
-    <p class="user_info" id="email">Email: {{ email }}</p>
-    <p class="user_info" id="username">Username: {{ username }}</p>
-    <p class="user_info" id="bio">Bio: {{ bio }}</p>
-    <p class="user_info" id="birthdate">Birthdate: {{ birthdate }}</p>
+    <p class="user_info" id="email">Email: {{ otheremail }}</p>
+    <p class="user_info" id="username">Username: {{ otherusername }}</p>
+    <p class="user_info" id="bio">Bio: {{ otherbio }}</p>
+    <p class="user_info" id="birthdate">Birthdate: {{ otherbirthdate }}</p>
+    <router-link to="/discoverusers">Go Back</router-link>
   </div>
 </template>
 
@@ -24,11 +25,19 @@ export default {
   },
   data() {
     return {
-      username: cookies.get("username{{ this.userId }}"),
-      email: cookies.get("email{{ this.userId }}"),
-      bio: cookies.get("bio{{ this.userId }}"),
-      birthdate: cookies.get("birthdate{{ this.userId }}"),
+      otherusername: cookies.get("otherusername"),
+      otheremail: cookies.get("otheremail"),
+      otherbio: cookies.get("otherbio"),
+      otherbirthdate: cookies.get("otherbirthdate"),
     };
+  },
+  mounted() {
+    if (localStorage.getItem("reloaded")) {
+      localStorage.removeItem("reloaded");
+    } else {
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
   },
 };
 </script>
