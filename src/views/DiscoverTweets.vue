@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-page></nav-page>
-    <h1>Discover Page</h1>
+    <h1>Discover Tweets</h1>
     <hr />
     <div>
       <h3>Tweet One</h3>
@@ -9,13 +9,14 @@
       <p>Username: {{ usernamess }}</p>
       <p>Content: {{ contentsss }}</p>
       <p>Date Created: {{ createdAtss }}</p>
-      <br />
+      <p>Likes: {{ numberLikes }}</p>
+      <tweet-likes></tweet-likes>
+      <br>
+      <unlike-tweet></unlike-tweet>
       <tweet-comments></tweet-comments>
-      <br />
       <add-comment></add-comment>
-      <br />
       <update-comment></update-comment>
-      <br />
+      <br>
       <delete-comment></delete-comment>
     </div>
     <hr />
@@ -30,6 +31,8 @@ import TweetComments from "@/components/TweetComments.vue";
 import AddComment from "@/components/AddComment.vue";
 import UpdateComment from "@/components/UpdateComment.vue";
 import DeleteComment from "@/components/DeleteComment.vue";
+import TweetLikes from "@/components/TweetLikes.vue";
+import UnlikeTweet from "@/components/UnlikeTweet.vue";
 
 export default {
   name: "discover-page",
@@ -39,6 +42,8 @@ export default {
     AddComment,
     UpdateComment,
     DeleteComment,
+    TweetLikes,
+    UnlikeTweet,
   },
   mounted() {
     axios
@@ -60,6 +65,24 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+    axios
+      .request({
+        url: "https://tweeterest.ml/api/tweet-likes",
+        method: "GET",
+        params: {
+          tweetId: this.tweetId,
+        },
+        headers: {
+          "X-Api-Key": "1NioXLukEERTOXRzZqRDct3zi649GbDOlBpB3kSkQmzvV",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        cookies.set("numberLikes", response.data.length);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   data() {
     return {
@@ -67,6 +90,7 @@ export default {
       contentsss: cookies.get("contentsss"),
       usernamess: cookies.get("usernamess"),
       createdAtss: cookies.get("createdAtss"),
+      numberLikes: cookies.get("numberLikes"),
     };
   },
 };

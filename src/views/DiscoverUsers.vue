@@ -101,50 +101,60 @@ export default {
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username0);
       cookies.set("otheremail", this.email0);
       cookies.set("otherbio", this.bio0);
       cookies.set("otherbirthdate", this.birthdate0);
+      cookies.set("otheruserId", this.userId0);
     },
     set1() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username1);
       cookies.set("otheremail", this.email1);
       cookies.set("otherbio", this.bio1);
       cookies.set("otherbirthdate", this.birthdate1);
+      cookies.set("otheruserId", this.userId1);
     },
     set2() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username2);
       cookies.set("otheremail", this.email2);
       cookies.set("otherbio", this.bio2);
       cookies.set("otherbirthdate", this.birthdate2);
+      cookies.set("otheruserId", this.userId2);
     },
     set3() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username3);
       cookies.set("otheremail", this.email3);
       cookies.set("otherbio", this.bio3);
       cookies.set("otherbirthdate", this.birthdate3);
+      cookies.set("otheruserId", this.userId3);
     },
     set4() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username4);
       cookies.set("otheremail", this.email4);
       cookies.set("otherbio", this.bio4);
       cookies.set("otherbirthdate", this.birthdate4);
+      cookies.set("otheruserId", this.userId4);
     },
     set5() {
       cookies.remove("otherusername");
@@ -155,56 +165,67 @@ export default {
       cookies.set("otheremail", this.email5);
       cookies.set("otherbio", this.bio5);
       cookies.set("otherbirthdate", this.birthdate5);
+      cookies.set("otheruserId", this.userId5);
     },
     set6() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username6);
       cookies.set("otheremail", this.email6);
       cookies.set("otherbio", this.bio6);
       cookies.set("otherbirthdate", this.birthdate6);
+      cookies.set("otheruserId", this.userId6);
     },
     set7() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username7);
       cookies.set("otheremail", this.email7);
       cookies.set("otherbio", this.bio7);
       cookies.set("otherbirthdate", this.birthdate7);
+      cookies.set("otheruserId", this.userId7);
     },
     set8() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username8);
       cookies.set("otheremail", this.email8);
       cookies.set("otherbio", this.bio1);
       cookies.set("otherbirthdate", this.birthdate8);
+      cookies.set("otheruserId", this.userId8);
     },
     set9() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username9);
       cookies.set("otheremail", this.email9);
       cookies.set("otherbio", this.bio9);
       cookies.set("otherbirthdate", this.birthdate9);
+      cookies.set("otheruserId", this.userId9);
     },
     set10() {
       cookies.remove("otherusername");
       cookies.remove("otheremail");
       cookies.remove("otherbio");
       cookies.remove("otherbirthdate");
+      cookies.remove("otheruserId");
       cookies.set("otherusername", this.username10);
       cookies.set("otheremail", this.email10);
       cookies.set("otherbio", this.bio10);
       cookies.set("otherbirthdate", this.birthdate10);
+      cookies.set("otheruserId", this.userId10);
     },
   },
   mounted() {
@@ -224,6 +245,7 @@ export default {
           cookies.set("bio" + i, response.data[i].bio);
           cookies.set("birthdate" + i, response.data[i].birthdate);
           cookies.set("email" + i, response.data[i].email);
+          cookies.set("userId" + i, response.data[i].userId);
         }
       })
       .catch((error) => {
@@ -236,56 +258,67 @@ export default {
       bio0: cookies.get("bio0"),
       birthdate0: cookies.get("birthdate0"),
       email0: cookies.get("email0"),
+      userId0: cookies.get("userId0"),
 
       username1: cookies.get("username1"),
       bio1: cookies.get("bio1"),
       birthdate1: cookies.get("birthdate1"),
       email1: cookies.get("email1"),
+      userId1: cookies.get("userId1"),
 
       username2: cookies.get("username2"),
       bio2: cookies.get("bio2"),
       birthdate2: cookies.get("birthdate2"),
       email2: cookies.get("email2"),
+      userId2: cookies.get("userId2"),
 
       username3: cookies.get("username3"),
       bio3: cookies.get("bio3"),
       birthdate3: cookies.get("birthdate3"),
       email3: cookies.get("email3"),
+      userId3: cookies.get("userId3"),
 
       username4: cookies.get("username4"),
       bio4: cookies.get("bio4"),
       birthdate4: cookies.get("birthdate4"),
       email4: cookies.get("email4"),
+      userId4: cookies.get("userId4"),
 
       username5: cookies.get("username5"),
       bio5: cookies.get("bio5"),
       birthdate5: cookies.get("birthdate5"),
       email5: cookies.get("email5"),
+      userId5: cookies.get("userId5"),
 
       username6: cookies.get("username6"),
       bio6: cookies.get("bio6"),
       birthdate6: cookies.get("birthdate6"),
       email6: cookies.get("email6"),
+      userId6: cookies.get("userId6"),
 
       username7: cookies.get("username7"),
       bio7: cookies.get("bio7"),
       birthdate7: cookies.get("birthdate7"),
       email7: cookies.get("email7"),
+      userId7: cookies.get("userId7"),
 
       username8: cookies.get("username8"),
       bio8: cookies.get("bio8"),
       birthdate8: cookies.get("birthdate8"),
       email8: cookies.get("email8"),
+      userId8: cookies.get("userId8"),
 
       username9: cookies.get("username9"),
       bio9: cookies.get("bio9"),
       birthdate9: cookies.get("birthdate9"),
       email9: cookies.get("email9"),
+      userId9: cookies.get("userId9"),
 
       username10: cookies.get("username10"),
       bio10: cookies.get("bio10"),
       birthdate10: cookies.get("birthdate10"),
       email10: cookies.get("email10"),
+      userId10: cookies.get("userId10"),
     };
   },
 };
