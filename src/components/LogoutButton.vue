@@ -45,6 +45,9 @@ export default {
       cookies.remove("userId");
       cookies.remove("imageUrl");
       cookies.remove("bannerUrl");
+      cookies.remove("tweetId");
+      cookies.remove("contents");
+      cookies.remove("createdAt");
       location.reload();
     },
   },

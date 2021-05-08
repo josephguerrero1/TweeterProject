@@ -8,11 +8,12 @@
 
 <script>
 import NavPage from "@/components/NavPage.vue";
-import NewTweet from "@"
+import NewTweet from "@/components/NewTweet.vue";
 export default {
   name: "feed-page",
   components: {
     NavPage,
+    NewTweet,
   },
 };
 </script>
