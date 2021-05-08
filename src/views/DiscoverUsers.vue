@@ -54,6 +54,7 @@ export default {
       email: cookies.get("email{{ this.userId }}"),
       bio: cookies.get("bio{{ this.userId }}"),
       birthdate: cookies.get("birthdate{{ this.userId }}"),
+      loginToken: cookies.get("loginToken"),
     };
   },
 };

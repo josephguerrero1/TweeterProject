@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div v-if="loginToken === undefined">
+    <div v-if="!contents">
       <nav-page></nav-page>
-      <h1>Error User is not logged in</h1>
+      <h1>User has no tweets</h1>
+      <router-link to="/feed">Create a tweet</router-link>
     </div>
     <div v-else>
       <nav-page></nav-page>
       <user-tweets></user-tweets>
-      
     </div>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       loginToken: cookies.get("loginToken"),
+      contents: cookies.get("contents"),
     };
   },
 };

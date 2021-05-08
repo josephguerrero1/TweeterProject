@@ -55,7 +55,10 @@ export default {
         .then((response) => {
           console.log(response);
           this.status = "Tweet has been deleted!";
-          location.reload();
+          cookies.remove("tweetId"),
+            cookies.remove("contents"),
+            cookies.remove("createdAt"),
+            location.reload();
         })
         .catch((error) => {
           console.log(error);
