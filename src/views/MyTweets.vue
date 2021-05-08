@@ -7,6 +7,7 @@
     <div v-else>
       <nav-page></nav-page>
       <user-tweets></user-tweets>
+      
     </div>
   </div>
 </template>

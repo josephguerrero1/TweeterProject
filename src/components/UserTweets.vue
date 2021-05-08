@@ -8,9 +8,13 @@
       <p>Username: {{ username }}</p>
       <p>Content: {{ contents }}</p>
       <p>Date Created: {{ createdAt }}</p>
+      <hr />
+      <br />
       <update-tweet></update-tweet>
+      <hr />
+      <br />
+      <delete-tweet></delete-tweet>
     </div>
-    <hr />
   </div>
 </template>
 
@@ -18,11 +22,13 @@
 import cookies from "vue-cookies";
 import axios from "axios";
 import UpdateTweet from "./UpdateTweet.vue";
+import DeleteTweet from "./DeleteTweet.vue";
 
 export default {
   name: "user-tweets",
   components: {
     UpdateTweet,
+    DeleteTweet,
   },
   mounted() {
     axios
