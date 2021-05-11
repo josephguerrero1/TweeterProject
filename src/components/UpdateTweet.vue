@@ -3,7 +3,7 @@
     <button @click="displayForm()">Edit Tweet</button>
     <br />
     <br />
-    <form action="javascript:void(0)">
+    <form id="editTweetForm" action="javascript:void(0)">
       <label for="content">Content: </label>
       <br />
       <br />
@@ -36,7 +36,20 @@ export default {
       contents: cookies.get("contents"),
     };
   },
+  mounted() {
+    let editTweetForm = document.getElementById("editTweetForm");
+    editTweetForm.style.display = "none";
+  },
   methods: {
+    displayForm() {
+      let editTweetForm = document.getElementById("editTweetForm");
+      console.log(editTweetForm.style.display);
+      if (editTweetForm.style.display === "block") {
+        editTweetForm.style.display = "none";
+      } else if (editTweetForm.style.display === "none") {
+        editTweetForm.style.display = "block";
+      }
+    },
     updateTweet() {
       this.status = "Loading...";
       axios

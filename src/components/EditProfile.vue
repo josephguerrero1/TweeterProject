@@ -38,6 +38,7 @@
 
         <input @click="editProfile()" type="submit" value="Update" />
       </form>
+      <h3>{{ status }}</h3>
     </div>
   </div>
 </template>
@@ -55,10 +56,12 @@ export default {
       birthdate: undefined,
       bio: undefined,
       loginToken: cookies.get("loginToken"),
+      status: undefined,
     };
   },
   methods: {
     editProfile() {
+      this.status = "Loading...";
       axios
         .request({
           url: "https://tweeterest.ml/api/users",
@@ -77,9 +80,13 @@ export default {
         })
         .then((response) => {
           console.log(response);
+          this.status = "Success!";
+          location.reload();
         })
         .catch((error) => {
           console.log(error);
+          this.status = "Failure!";
+          location.reload();
         });
     },
   },

@@ -42,6 +42,12 @@ export default {
           "birthdate",
           response.data[response.data.length - 1].birthdate
         );
+        this.userId = cookies.get("userId");
+        this.bio = cookies.get("bio");
+        this.email = cookies.get("email");
+        this.birthdate = cookies.get("birthdate");
+        this.username = cookies.get("username");
+
         console.log(response);
       })
       .catch((error) => {
@@ -51,10 +57,10 @@ export default {
   data() {
     return {
       userId: cookies.get("userId"),
-      email: cookies.get("email"),
-      username: cookies.get("username"),
-      bio: cookies.get("bio"),
-      birthdate: cookies.get("birthdate"),
+      email: "",
+      username: "",
+      bio: "",
+      birthdate: "",
     };
   },
 };

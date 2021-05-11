@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+import VueMq from 'vue-mq'
+
 import DiscoverTweets from '@/views/DiscoverTweets.vue'
 import FeedPage from '@/views/FeedPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
@@ -8,6 +11,15 @@ import SignupPage from '@/views/SignupPage.vue'
 import MyTweets from "@/views/MyTweets.vue"
 import DiscoverUsers from "@/views/DiscoverUsers.vue"
 import OtherUser from "@/views/OtherUser.vue"
+
+Vue.use(VueMq, {
+  breakpoints: {
+    mobile: 480,
+    tablet: 768,
+    laptop: 1024,
+    desktop: Infinity,
+  }
+})
 
 Vue.use(VueRouter)
 

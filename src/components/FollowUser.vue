@@ -19,7 +19,28 @@ export default {
       status: undefined,
       followId: cookies.get("otheruserId"),
       following: cookies.get("following"),
+      userId: cookies.get("userId"),
     };
+  },
+  mounted() {
+    axios
+      .request({
+        url: "https://tweeterest.ml/api/follows",
+        method: "GET",
+        params: {
+          userId: this.userId,
+        },
+        headers: {
+          "X-Api-Key": "1NioXLukEERTOXRzZqRDct3zi649GbDOlBpB3kSkQmzvV",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        cookies.get
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   methods: {
     followUser() {
@@ -40,7 +61,6 @@ export default {
         .then((response) => {
           console.log(response);
           cookies.set("following", "dafbsfgb");
-          this.status = "Success!";
           location.reload();
         })
         .catch((error) => {
